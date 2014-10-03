@@ -1,0 +1,38 @@
+<div class="col-lg-6 col-md-6">
+<% 5.times do %>
+  <div class ="well">
+    <div class ="row">
+      <div class= "col-xs-3 col-sm-3">
+        <%= image_tag "http://a904.phobos.apple.com/us/r30/Purple2/v4/f3/e8/06/f3e8069a-1ddb-2a92-abf9-0f636d0d7d01/Icon.png", :class => "img-rounded" %>
+      </div>
+      <div class=" col-xs-6 col-sm-6">
+        <h5>GameName</h5>
+        <p>
+          Short Description
+        </p>
+        <%= image_tag "star-full.png" %>
+        <%= image_tag "star-full.png" %>
+        <%= image_tag "star-full.png" %>
+        <%= image_tag "star-full.png" %>
+        <% random_bool = [true, false].sample %>
+        <% if random_bool == true  %>
+        <%= image_tag "star-half.png" %>
+        <% else %>
+        <%= image_tag "star-full.png" %>
+        <% end %>
+
+      </div>
+        <div class="col-xs-3 col-sm-3" style="">
+          <br>
+
+          <span class ="strike-through"><span class="price"><%= number_to_currency(2.99) %></span></span>
+
+          <br>
+          <br>
+
+          <%= link_to "Free".capitalize , "url", :class => "btn btn-primary" %>
+        </div>
+      </div>
+  </div>
+<% end %>
+</div>
