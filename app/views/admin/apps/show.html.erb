@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @app.name %>
+</p>
+
+<p>
+  <strong>Store ID:</strong>
+  <%= @app.store_id %>
+</p>
+
+<p>
+  <strong>Reflink:</strong>
+  <%= @app.reflink %>
+</p>
+
+<p>
+  <strong>Price</strong>
+  <%= @app.price %>
+</p>
+<p>
+  <strong>Alt Price</strong>
+  <%= @app.alt_price %>
+</p>
+
+<p>
+  <strong>Rating</strong>
+  <%= @app.rating %>
+  <% if @app.rating.include? ".5" %>
+    <% @app.rating[0..-3].to_i.times do  %>
+      <%= image_tag "star-full.png" %>
+    <% end %>
+      <%= image_tag "star-half.png" %>
+  <% else %>
+    <% @app.rating.to_i.times do %>
+      <%= image_tag "star-full.png" %>
+    <% end %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Thumb</strong>
+  <%= image_tag(@app.img) %>
+</p>
+
+<p>
+  <strong>Description</strong>
+  <%= @app.description %>
+</p>
+
+<%= link_to 'Edit', edit_admin_app_path(@app) %> |
+<%= link_to 'Back', admin_apps_path %>

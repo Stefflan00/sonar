@@ -9,9 +9,11 @@
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
-//
 //= require jquery
+//= require jquery.turbolinks
+//= require browser_timezone_rails/application.js
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require turbolinks
+//= require jquery.countdown
 //= require_tree .
+//= require turbolinks

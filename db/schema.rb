@@ -11,6 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20141006131552) do
+
+  create_table "apps", force: true do |t|
+    t.string   "store_id"
+    t.string   "name"
+    t.string   "reflink"
+    t.text     "img"
+    t.string   "rating"
+    t.string   "price"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "alt_price"
+  end
 
 end

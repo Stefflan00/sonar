@@ -6,7 +6,7 @@ def apple_lookup id
 end
 
 
-def app id
+def app_data_from_apple id
   return object = JSON.parse(open("https://itunes.apple.com/lookup?id=#{id}").read)['results']
 end
 

@@ -1,44 +1,81 @@
 
-<% object = app("774751518") %>
-<%= debug app("774751518") %>
 
-<%= debug app_price("774751518") %>
-<%= image_tag "#{object.first['artworkUrl60']}", :class => "img-rounded" %>
 <div class="col-lg-6 col-md-6">
-<% 5.times do %>
+  <p>
+    REMAINING TIME
+  </p>
+  <div id="countdown">
+
+
+  </div>
+<% @apps.each do |app| %>
   <div class ="well">
     <div class ="row">
       <div class= "col-xs-3 col-sm-3">
-        <%= image_tag "http://a904.phobos.apple.com/us/r30/Purple2/v4/f3/e8/06/f3e8069a-1ddb-2a92-abf9-0f636d0d7d01/Icon.png", :class => "img-rounded" %>
+        <%= image_tag app.img, :class => "img-rounded" %>
       </div>
       <div class=" col-xs-6 col-sm-6">
-        <h5>GameName</h5>
+        <h5><%= app.name %></h5>
         <p>
-          Short Description
+          <%= debug app.store_id %>
         </p>
-        <%= image_tag "star-full.png" %>
-        <%= image_tag "star-full.png" %>
-        <%= image_tag "star-full.png" %>
-        <%= image_tag "star-full.png" %>
-        <% random_bool = [true, false].sample %>
-        <% if random_bool == true  %>
-        <%= image_tag "star-half.png" %>
+        <% if app.rating.include? ".5" %>
+          <% app.rating[0..-3].to_i.times do  %>
+            <%= image_tag "star-full.png" %>
+          <% end %>
+            <%= image_tag "star-half.png" %>
         <% else %>
-        <%= image_tag "star-full.png" %>
+          <% app.rating.to_i.times do %>
+            <%= image_tag "star-full.png" %>
+          <% end %>
         <% end %>
 
       </div>
         <div class="col-xs-3 col-sm-3" style="">
           <br>
 
-          <span class ="strike-through"><span class="price"><%= number_to_currency(2.99) %></span></span>
+          <span class ="strike-through"><span class="price"><%= number_to_currency(app.price) %></span></span>
 
           <br>
           <br>
 
-          <%= link_to "Free".capitalize , "url", :class => "btn btn-primary" %>
+          <%= link_to "Free".capitalize , app.reflink, :class => "btn btn-primary" %>
         </div>
       </div>
   </div>
 <% end %>
 </div>
+<script charset="utf-8">
+  // set the date we're counting down to
+
+var midnight = new Date();
+  midnight.setHours (23, 59, 59)
+// variables for time units
+var days, hours, minutes, seconds;
+
+// get tag element
+var countdown = document.getElementById('countdown');
+
+// update the tag with id "countdown" every 1 second
+setInterval(function () {
+
+    // find the amount of "seconds" between now and target
+    var current_date = new Date().getTime();
+    var seconds_left = (midnight - current_date) / 1000;
+
+    // do some time calculations
+    days = parseInt(seconds_left / 86400);
+    seconds_left = seconds_left % 86400;
+
+    hours = parseInt(seconds_left / 3600);
+    seconds_left = seconds_left % 3600;
+
+    minutes = parseInt(seconds_left / 60);
+    seconds = parseInt(seconds_left % 60);
+
+    // format countdown string + set tag value
+    countdown.innerHTML = '<span class="hours">' + hours + ' <b>Hours</b></span> <span class="minutes">'
+    + minutes + ' <b>Minutes</b></span> <span class="seconds">' + seconds + ' <b>Seconds</b></span>';
+
+}, 1000);
+</script>
