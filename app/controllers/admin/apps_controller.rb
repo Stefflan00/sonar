@@ -33,7 +33,7 @@ layout 'admin'
     @app.img = app_data.first["artworkUrl60"]
     @app.description = app_data.first["description"]
     @app.name = app_data.first["trackName"]
-
+    @app.genre = app_data.first["genres"]
 
     respond_to do |format|
       if @app.save
@@ -78,6 +78,6 @@ layout 'admin'
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def app_params
-      params.require(:app).permit(:name, :store_id, :reflink, :img, :price, :rating, :description)
+      params.require(:app).permit(:name, :store_id, :reflink, :img, :price, :rating, :description, :genre)
     end
 end
