@@ -17,16 +17,16 @@
       <div class=" col-xs-6 col-sm-6">
         <h5><%= app.name %></h5>
         <p>
-          
+
         </p>
         <% if app.rating.include? ".5" %>
           <% app.rating[0..-3].to_i.times do  %>
-            <%= image_tag "star-full.png" %>
+            <%= image_tag("star-full.png", size: "15x15" )%>
           <% end %>
-            <%= image_tag "star-half.png" %>
+            <%= image_tag("star-half.png", size: "15x15" ) %>
         <% else %>
           <% app.rating.to_i.times do %>
-            <%= image_tag "star-full.png" %>
+            <%= image_tag("star-full.png", size: "15x15" ) %>
           <% end %>
         <% end %>
 
