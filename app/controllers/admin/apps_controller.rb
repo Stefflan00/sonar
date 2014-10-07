@@ -1,4 +1,5 @@
 class Admin::AppsController < ApplicationController
+http_basic_authenticate_with :name => "frodo", :password => "thering"
 before_action :set_app, only: [:show, :edit, :update, :destroy]
 layout 'admin'
   # GET /apps
@@ -78,6 +79,6 @@ layout 'admin'
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def app_params
-      params.require(:app).permit(:name, :store_id, :reflink, :img, :price, :rating, :description, :genre)
+      params.require(:app).permit(:name, :store_id, :reflink, :img, :price, :rating, :description, :genre, :alt_price)
     end
 end
