@@ -34,4 +34,11 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+
+SERVICE_ACCOUNT_EMAIL_ADDRESS = '896421010198-vt7q51quuo3osbg2gi0u16kio8i2l7d4@developer.gserviceaccount.com'
+PATH_TO_KEY_FILE              = '/Users/stefanmaier/Downloads/Rails-App-b8e747bfc701.p12'
+PROFILE                       = 'ga:92523731'
+# your GA profile id, looks like 'ga:12345'
+
 end

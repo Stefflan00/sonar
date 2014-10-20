@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'analytics/visitors'
+
   get 'pages/startpage'
   get 'landingpages/games'
 

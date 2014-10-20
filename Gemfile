@@ -33,7 +33,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'split', :require => 'split/dashboard'
 gem 'koala', '~> 1.10.1'
-gem 'zuck'  
+gem 'zuck'
+gem 'legato'
+gem 'oauth2'
+gem 'google-api-client'  
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 #gem 'SystemTimer', '~> 1.2.3'
