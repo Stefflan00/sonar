@@ -36,7 +36,8 @@ gem 'koala', '~> 1.10.1'
 gem 'zuck'
 gem 'legato'
 gem 'oauth2'
-gem 'google-api-client'  
+gem 'google-api-client'
+gem "figaro"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 #gem 'SystemTimer', '~> 1.2.3'

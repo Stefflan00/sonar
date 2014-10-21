@@ -61,6 +61,9 @@ GEM
     extlib (0.9.16)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     google-api-client (0.7.1)
       addressable (>= 2.3.2)
       autoparse (>= 0.3.3)
@@ -203,6 +206,7 @@ PLATFORMS
 DEPENDENCIES
   browser-timezone-rails
   coffee-rails (~> 4.0.0)
+  figaro
   google-api-client
   jbuilder (~> 2.0)
   jquery-countdown-rails
